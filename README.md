@@ -5,3 +5,6 @@
 #### 查看Mach-O是否有某个函数
 * ```otool -ov /Users/shoguncao/Library/Developer/Xcode/DerivedData/example-gpzqsrogwlcrekbqpowhbsjfhxea/Build/Products/Debug-iphonesimulator/example.app/example | grep 'myTest'```  
 * ```nm -nm /Users/shoguncao/Library/Developer/Xcode/DerivedData/example-gpzqsrogwlcrekbqpowhbsjfhxea/Build/Products/Debug-iphonesimulator/example.app/example | grep 'myTest'``` 
+
+#### 将OC文件转换为C++
+* ```xcrun -sdk iphoneos clang -arch arm64 -rewrite-objc main.m```
