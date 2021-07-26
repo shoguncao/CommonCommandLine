@@ -8,3 +8,6 @@
 
 #### 将OC文件转换为C++
 * ```xcrun -sdk iphoneos clang -arch arm64 -rewrite-objc main.m```
+
+#### 对指定目录下所有git执行fetch
+* ```find . -type d -print | grep '.git$' | awk -F '/.git' '{print $1}' | xargs -I dir sh -c "pushd dir; git fetch --all; popd;"```
