@@ -32,3 +32,11 @@ export old_header='#import "TGAAccountInfo.h"'
 export new_header='#import <XXX/TGAAccountInfo.h>'                           
 find . -type f | grep '.m$' | xargs perl -pi -e 's/$ENV{old_header}/$ENV{new_header}/g'
 ```
+
+#### 查看mobileprovision文件
+* 查看mobileprovisiton文件  
+`security cms -D -i demo.mobileprovision > demo.tmp`  
+* 提取 mobileprovision 文件中的证书  
+`/usr/libexec/PlistBuddy -c 'Print DeveloperCertificates:0' demo.tmp | openssl x509 -inform DER > demo.cer`  
+* 以文本形式输出证书的内容  
+`openssl x509 -in demo.cer -text -noout`  
