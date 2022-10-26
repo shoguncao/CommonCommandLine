@@ -40,3 +40,8 @@ find . -type f | grep '.m$' | xargs perl -pi -e 's/$ENV{old_header}/$ENV{new_hea
 `/usr/libexec/PlistBuddy -c 'Print DeveloperCertificates:0' demo.tmp | openssl x509 -inform DER > demo.cer`  
 * 以文本形式输出证书的内容  
 `openssl x509 -in demo.cer -text -noout`  
+
+
+#### 查看mach-O文件符号
+* 查看静态库`objdump liba.a --syms`
+* 查看动态库`/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dyldinfo -export liba.dylib`
