@@ -39,8 +39,15 @@ find . -type f | grep '.m$' | xargs perl -pi -e 's/$ENV{old_header}/$ENV{new_hea
 * 提取 mobileprovision 文件中的证书  
 `/usr/libexec/PlistBuddy -c 'Print DeveloperCertificates:0' demo.tmp | openssl x509 -inform DER > demo.cer`  
 * 以文本形式输出证书的内容  
-`openssl x509 -in demo.cer -text -noout`  
+`openssl x509 -in demo.cer -text -noout`
 
+#### 查看p12文件
+* 生成key
+`openssl pkcs12 -in demo.p12 -nocerts -nodes -out demo.key`
+* 解析公钥
+`openssl rsa -in demo.key -pubout -out public.pem`
+* 解析私钥
+`openssl rsa -in demo.key -out private.pem`
 
 #### 查看mach-O文件符号
 * 查看静态库`objdump liba.a --syms`
