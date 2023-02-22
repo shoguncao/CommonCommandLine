@@ -52,3 +52,9 @@ find . -type f | grep '.m$' | xargs perl -pi -e 's/$ENV{old_header}/$ENV{new_hea
 #### 查看mach-O文件符号
 * 查看静态库`objdump liba.a --syms`
 * 查看动态库`/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dyldinfo -export liba.dylib`
+
+#### base64转16进制
+`echo YmFzZTY0dGVzdA== | openssl base64 -d | xxd -ps`
+
+#### 16进制转base64
+`echo 62617365363474657374 | xxd -r -ps | openssl base64`
