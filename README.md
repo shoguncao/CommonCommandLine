@@ -42,19 +42,8 @@ find . -type f | grep '.m$' | xargs perl -pi -e 's/$ENV{old_header}/$ENV{new_hea
 `openssl x509 -in demo.cer -text -noout`
 
 #### 查看p12文件
-* 生成key
-`openssl pkcs12 -in demo.p12 -nocerts -nodes -out demo.key`
-* 解析公钥
-`openssl rsa -in demo.key -pubout -out public.pem`
-* 解析私钥
-`openssl rsa -in demo.key -out private.pem`
+`openssl pkcs12 -in 证书.p12 -out 证书.pem -nodes`
 
 #### 查看mach-O文件符号
 * 查看静态库`objdump liba.a --syms`
 * 查看动态库`/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dyldinfo -export liba.dylib`
-
-#### base64转16进制
-`echo YmFzZTY0dGVzdA== | openssl base64 -d | xxd -ps`
-
-#### 16进制转base64
-`echo 62617365363474657374 | xxd -r -ps | openssl base64`
