@@ -41,6 +41,9 @@ find . -type f | grep '.m$' | xargs perl -pi -e 's/$ENV{old_header}/$ENV{new_hea
 * 以文本形式输出证书的内容  
 `openssl x509 -in demo.cer -text -noout`
 
+#### 查看cer文件
+`openssl x509 -inform der -in demo.cer`
+
 #### 查看p12文件
 `openssl pkcs12 -in 证书.p12 -out 证书.pem -nodes`
 
