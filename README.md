@@ -47,6 +47,9 @@ find . -type f | grep '.m$' | xargs perl -pi -e 's/$ENV{old_header}/$ENV{new_hea
 #### 查看p12文件
 `openssl pkcs12 -in 证书.p12 -out 证书.pem -nodes`
 
+#### 查看CertSigningRequest文件
+`openssl req -noout -text -in xxx.certSigningRequest`
+
 #### 查看mach-O文件符号
 * 查看静态库`objdump liba.a --syms`
 * 查看动态库`/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dyldinfo -export liba.dylib`
