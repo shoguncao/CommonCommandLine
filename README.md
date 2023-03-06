@@ -53,6 +53,12 @@ find . -type f | grep '.m$' | xargs perl -pi -e 's/$ENV{old_header}/$ENV{new_hea
 #### 查看pem文件
 `openssl x509 -in xxx.pem -noout -pubkey`
 
+#### 私钥转公钥  
+```
+openssl pkcs12 -in private.p12 -nodes -out private.pem
+openssl rsa -in private.pem -pubout > public.pem
+```
+
 #### 查看mach-O文件符号
 * 查看静态库`objdump liba.a --syms`
 * 查看动态库`/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dyldinfo -export liba.dylib`
