@@ -59,6 +59,12 @@ openssl pkcs12 -in private.p12 -nodes -out private.pem
 openssl rsa -in private.pem -pubout > public.pem
 ```
 
+#### 从p12秘钥请求CSR(CertSigningRequest)文件
+```
+openssl pkcs12 -in private.p12 -nodes -out private.pem
+openssl req -newkey rsa:2048 -key private.pem -out private.csr
+```
+
 #### 查看mach-O文件符号
 * 查看静态库`objdump liba.a --syms`
 * 查看动态库`/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dyldinfo -export liba.dylib`
