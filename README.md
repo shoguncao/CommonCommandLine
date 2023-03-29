@@ -68,3 +68,12 @@ openssl req -newkey rsa:2048 -key private.pem -out private.csr
 #### 查看mach-O文件符号
 * 查看静态库`objdump liba.a --syms`
 * 查看动态库`/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dyldinfo -export liba.dylib`
+
+#### 由CMakeLists.txt生成Xcode工程
+```
+cmake .. -G Xcode \
+-DCMAKE_TOOLCHAIN_FILE=cmake/ios.toolchain.cmake \
+-DPLATFORM=OS64 -DARCHS="arm64" -DCMAKE_SYSTEM_PROCESSOR=arm64 \
+-DENABLE_BITCODE=0 -DENABLE_ARC=0 -DENABLE_VISIBILITY=1 -DDEPLOYMENT_TARGET=9.3 \
+-DDynamicBinaryInstrument=ON -DNearBranch=ON -DPlugin.SymbolResolver=ON -DPlugin.Darwin.HideLibrary=ON -DPlugin.Darwin.ObjectiveC=ON
+```
