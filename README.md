@@ -77,3 +77,9 @@ cmake .. -G Xcode \
 -DENABLE_BITCODE=0 -DENABLE_ARC=0 -DENABLE_VISIBILITY=1 -DDEPLOYMENT_TARGET=9.3 \
 -DDynamicBinaryInstrument=ON -DNearBranch=ON -DPlugin.SymbolResolver=ON -DPlugin.Darwin.HideLibrary=ON -DPlugin.Darwin.ObjectiveC=ON
 ```
+
+#### 开启/停止XCode的Indexing  
+- 停止  
+`defaults write com.apple.dt.XCode IDEIndexDisable 1`  
+- 开启  
+`defaults write com.apple.dt.XCode IDEIndexDisable 0`  
