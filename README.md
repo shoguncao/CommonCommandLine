@@ -82,4 +82,7 @@ cmake .. -G Xcode \
 - 停止  
 `defaults write com.apple.dt.XCode IDEIndexDisable 1`  
 - 开启  
-`defaults write com.apple.dt.XCode IDEIndexDisable 0`  
+`defaults write com.apple.dt.XCode IDEIndexDisable 0`
+
+#### protobuf生成swift命令  
+`protoc --swift_out=. chatmsg.proto --swift_opt=Visibility=Public`  
