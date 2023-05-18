@@ -86,3 +86,6 @@ cmake .. -G Xcode \
 
 #### protobuf生成swift命令  
 `protoc --swift_out=. chatmsg.proto --swift_opt=Visibility=Public`  
+
+#### mac上无法打开xxx，因为无法验证开发者
+`sudo spctl --master-disable`
