@@ -88,4 +88,7 @@ cmake .. -G Xcode \
 `protoc --swift_out=. chatmsg.proto --swift_opt=Visibility=Public`  
 
 #### mac上无法打开xxx，因为无法验证开发者
-`sudo spctl --master-disable`
+`sudo spctl --master-disable`  
+
+#### iPhone手机连接Mac后取控制台日志命令
+`sudo log collect --device --start '2023-06-01 00:00:00' --output /Users/shoguncao/Downloads`
