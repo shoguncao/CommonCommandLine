@@ -92,3 +92,6 @@ cmake .. -G Xcode \
 
 #### iPhone手机连接Mac后取控制台日志命令
 `sudo log collect --device --start '2023-06-01 00:00:00' --output /Users/shoguncao/Downloads`
+
+#### UE通过命令行编译.uproject
+`/Users/Shared/Epic\ Games/UE_4.26/Engine/Build/BatchFiles/Mac/Build.sh CapturerDemo iOS Development -Project="/Users/shoguncao/work/codes/ESTV/UE_Capturer_Demo/CapturerDemo.uproject" -WaitMutex`
