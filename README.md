@@ -95,3 +95,13 @@ cmake .. -G Xcode \
 
 #### UE通过命令行编译.uproject
 `/Users/Shared/Epic\ Games/UE_4.26/Engine/Build/BatchFiles/Mac/Build.sh CapturerDemo iOS Development -Project="/Users/shoguncao/work/codes/ESTV/UE_Capturer_Demo/CapturerDemo.uproject" -WaitMutex`
+
+#### demangle符号
+- *c/c++/objective-c*:  
+```
+c++filt __ZN4mars4xlog15XloggerAppender11NewInstanceERKNS0_10XLogConfigEy
+```
+- *swift*:
+```
+swift demangle __swift_FORCE_LOAD_$_swiftCoreFoundation
+```
