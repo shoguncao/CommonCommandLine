@@ -96,6 +96,9 @@ cmake .. -G Xcode \
 #### UE通过命令行编译.uproject
 `/Users/Shared/Epic\ Games/UE_4.26/Engine/Build/BatchFiles/Mac/Build.sh CapturerDemo iOS Development -Project="/Users/shoguncao/work/codes/ESTV/UE_Capturer_Demo/CapturerDemo.uproject" -WaitMutex`
 
+#### UE通过命令行生成Xcode工程
+`/Users/Shared/Epic\ Games/UE_4.26/Engine/Build/BatchFiles/Mac/GenerateProjectFiles.sh -project="/Users/shoguncao/work/codes/ESTV/UE_Capturer_Demo/CapturerDemo.uproject" -game`  
+
 #### Unity通过命令行编译
 /Applications/Unity/Hub/Editor/5.6.4p4/Unity.app/Contents/MacOS/Unity -batchmode -nographics -projectPath /Users/shoguncao/work/codes/ESTV/unity_box_record_cf_compat -executeMethod BuildPlayerExample.MyBuild  -logFile /Users/shoguncao/Downloads/11.log
 
