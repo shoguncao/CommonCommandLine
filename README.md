@@ -18,7 +18,13 @@
 * 查找symbolicatecrash路径  
 ```find /Applications/Xcode.app -name symbolicatecrash -type f```  
 * 解析crash log
-```/Applications/Xcode.app/Contents/SharedFrameworks/DVTFoundation.framework/Versions/A/Resources/symbolicatecrash -v TGASDKDebugApp.ips TGASDKDebugApp.app.dSYM```
+```/Applications/Xcode.app/Contents/SharedFrameworks/DVTFoundation.framework/Versions/A/Resources/symbolicatecrash -v TGASDKDebugApp.ips TGASDKDebugApp.app.dSYM```  
+
+#### 用CrashSymbolicator.py解析iOS堆栈
+* 查找CrashSymbolicator.py路径
+```find /Applications/Xcode.app -name CrashSymbolicator.py -type f```
+* 解析crash log
+```python3 /Applications/Xcode.app/Contents/SharedFrameworks/CoreSymbolicationDT.framework/Versions/A/Resources/CrashSymbolicator.py -d /Users/shoguncao/Downloads/TTNetworkManager/TTNetworkManager.framework.dSYM /Users/shoguncao/Downloads/LetsGoClient-2025-01-07-121740.ips```
 
 #### 用atos解析iOS堆栈  
 * ```atos -o /Users/shoguncao/Downloads/TGASDKDebugApp.app.dSYM/Contents/Resources/DWARF/TGASDKDebugApp -l 0x1006b8000 0x10112a4ac```  
