@@ -25,14 +25,6 @@
 #### 用atos解析iOS堆栈  
 * ```atos -o /Users/shoguncao/Downloads/TGASDKDebugApp.app.dSYM/Contents/Resources/DWARF/TGASDKDebugApp -l 0x1006b8000 0x10112a4ac```  
 
-#### 查看mobileprovision文件
-* 查看mobileprovisiton文件  
-`security cms -D -i demo.mobileprovision > demo.tmp`  
-* 提取 mobileprovision 文件中的证书  
-`/usr/libexec/PlistBuddy -c 'Print DeveloperCertificates:0' demo.tmp | openssl x509 -inform DER > demo.cer`  
-* 以文本形式输出证书的内容  
-`openssl x509 -in demo.cer -text -noout`
-
 #### 查看cer文件
 `openssl x509 -inform der -in demo.cer`
 
