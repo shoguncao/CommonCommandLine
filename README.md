@@ -25,16 +25,6 @@
 #### 用atos解析iOS堆栈  
 * ```atos -o /Users/shoguncao/Downloads/TGASDKDebugApp.app.dSYM/Contents/Resources/DWARF/TGASDKDebugApp -l 0x1006b8000 0x10112a4ac```  
 
-#### 通过file+grep+awk将git下所有mach-O文件加入lfs track  
-* ```find . -type f | grep -v '/.git/' | xargs file | grep 'current ar archive' | awk -F '[ :]' '{print $1}' | uniq | xargs git lfs track```  
-
-#### 通过perl -pi -e 替换指定字符串  
-```
-export old_header='#import "TGAAccountInfo.h"'                               
-export new_header='#import <XXX/TGAAccountInfo.h>'                           
-find . -type f | grep '.m$' | xargs perl -pi -e 's/$ENV{old_header}/$ENV{new_header}/g'
-```
-
 #### 查看mobileprovision文件
 * 查看mobileprovisiton文件  
 `security cms -D -i demo.mobileprovision > demo.tmp`  
