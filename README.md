@@ -25,30 +25,6 @@
 #### 用atos解析iOS堆栈  
 * ```atos -o /Users/shoguncao/Downloads/TGASDKDebugApp.app.dSYM/Contents/Resources/DWARF/TGASDKDebugApp -l 0x1006b8000 0x10112a4ac```  
 
-#### 查看cer文件
-`openssl x509 -inform der -in demo.cer`
-
-#### 查看p12文件
-`openssl pkcs12 -in 证书.p12 -out 证书.pem -nodes`
-
-#### 查看CertSigningRequest文件
-`openssl req -noout -text -in xxx.certSigningRequest -pubkey`
-
-#### 查看pem文件
-`openssl x509 -in xxx.pem -noout -pubkey`
-
-#### 私钥转公钥  
-```
-openssl pkcs12 -in private.p12 -nodes -out private.pem
-openssl rsa -in private.pem -pubout > public.pem
-```
-
-#### 从p12秘钥请求CSR(CertSigningRequest)文件
-```
-openssl pkcs12 -in private.p12 -nodes -out private.pem
-openssl req -newkey rsa:2048 -key private.pem -out private.csr
-```
-
 #### 查看mach-O文件符号
 * 查看静态库`objdump liba.a --syms`
 * 查看动态库`/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dyldinfo -export liba.dylib`
