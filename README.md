@@ -71,3 +71,15 @@ c++filt __ZN4mars4xlog15XloggerAppender11NewInstanceERKNS0_10XLogConfigEy
 ```
 swift demangle __swift_FORCE_LOAD_$_swiftCoreFoundation
 ```
+
+#### lldb相关命令
+- 1、查找函数：`image lookup -r -n RSA_get0_key`
+- 2、查看内存：`memory read --force --size 1024 --format x -c 1 0x0000600002c10960`
+- 3、写内存到文件：`memory read --binary --outfile test.der 0x00007f8540020000 0x00007f8540020080`
+- 4、查看寄存器：`register read`
+- 5、设置断点： `breakpoint set --name EVP_DigestSignInit`、`breakpoint set --address 0000000100003f24`
+- 6、查找地址对应的函数：`image lookup -a 0x100003f24`
+- 7、设置跳过断点但打印：`breakpoint command add 1`(其中1是breakpoint list查到的idx)，然后进入交互模式，用p输出，用continue跳过
+- 8、读取单个寄存器的值：`$r8`
+
+
