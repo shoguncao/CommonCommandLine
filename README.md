@@ -83,6 +83,9 @@ swift demangle __swift_FORCE_LOAD_$_swiftCoreFoundation
 - 8、读取单个寄存器的值：`$r8`
 
 #### 代码混淆
-- `upx --best -o obfuscated_xmrig xmrig`
+- 生成随机填充数据（例如 512 字节）`dd if=/dev/urandom of=padding.bin bs=1 count=512`
+- 追加到原始文件`cat xmrig padding.bin > tmp_xmrig`
+- 压缩并输出 `upx --best -o obfuscated_xmrig tmp_xmrig`
+
 
 
