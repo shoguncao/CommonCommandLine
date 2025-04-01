@@ -82,4 +82,7 @@ swift demangle __swift_FORCE_LOAD_$_swiftCoreFoundation
 - 7、设置跳过断点但打印：`breakpoint command add 1`(其中1是breakpoint list查到的idx)，然后进入交互模式，用p输出，用continue跳过
 - 8、读取单个寄存器的值：`$r8`
 
+#### 代码混淆
+- `upx --best -o obfuscated_xmrig xmrig`
+
 
